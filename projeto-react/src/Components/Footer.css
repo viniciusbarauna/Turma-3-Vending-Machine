@@ -1,0 +1,31 @@
+li{
+    list-style-type: none;
+    color: white;
+    cursor: pointer;
+}
+
+.col-footer{
+    padding-top: 25px;
+    border-top: 1px dotted black;
+}
+
+.logo{
+    margin: 10px 30px;
+}
+
+a, .logo{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.TextLI {
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+}
+
