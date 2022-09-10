@@ -15,11 +15,13 @@ contract NFT_VendingMachine is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
     Counters.Counter private _tokenIdCounter;
     uint public max_supply = 100; // maximo de nft que a é possivel criar
 
-    receive() external payable{ } // função para o contrato receber ether
+    // função para o contrato receber ether
+    receive() external payable{
+        require(msg.value > 0, unicode"Erro: valor muito baixo");
+    }
 
     mapping (uint => bool) public sold; // retorna se um nft ja foi vendido
     mapping (uint256 => uint256) public _value;  // retornar o valor de um nft
-    mapping (address => uint) public nftBalances; // retornar a qtd de nft de uma conta
 
     event ValueChanged(uint256 value);
     event Purchase(address owner, uint price, uint id, string uri);
@@ -46,7 +48,6 @@ contract NFT_VendingMachine is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
     function purchase(uint _id) external payable {
         _validate(_id);
         _trade(_id); // swap nft for eth
-        nftBalances[msg.sender]++; // indica quantos nft's um endereço possui
 
         emit Purchase(msg.sender, _value[_id], _id, tokenURI(_id));
     }
@@ -58,14 +59,12 @@ contract NFT_VendingMachine is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
     }
 
     function _trade(uint _id) internal {
-        // inverti a ordem por segurança, dessa maneira
-        // 1º envia o ether, depois envia o NFT
+        // primeiro envia o ether, depois envia o NFT = segurança
   	    //payable(owner()).transfer(msg.value); //eth to owner
   	    payable(address(this)).transfer(msg.value); //eth to contract
   	    _transfer(address(this), msg.sender, _id); //nft to user
   	    sold[_id] = true; //nft is sold
     }
-
 
     // talvez eu tire o modificador onlyOwner, pois assim
     // quem for dono do token pode modificar o valor dele
@@ -75,21 +74,17 @@ contract NFT_VendingMachine is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
         emit ValueChanged(value);
     }
 
-    // vou deixar essa função pra retornar os nft
-    // que não estão vendidos.
-    function getBalanceNft() external view returns(uint){
-        return nftBalances[address(this)];
-    }
-
     //função para sacar X quantidade do contrato para um Owner.
-    function _sacar(uint256 _amount) public payable onlyOwner {
+    function sacar(uint256 _amount) public payable onlyOwner {
         require(address(this).balance >= _amount, unicode"ERRO: saldo indisponível no contrato!");
         payable(owner()).transfer(_amount);
     }
 
     // The following functions are overrides required by Solidity.
+
     function _baseURI() internal pure override returns (string memory) {
         //return "ipfs://QmddxEdz2U44vdkRxdvYZmtAwjfBKrFabQPD4WhVkbgH78/";
+        // tenho que modificar esse link quando pegar os nft
         return "https://ipfs.io/ipfs/QmXtWaD1YH6fNshGHC7R2FDvCfF63KzoxdAhq5edvqSHbo/";
     }
 
