@@ -60,14 +60,12 @@ contract NFT_VendingMachine is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
 
     function _trade(uint _id) internal {
         // primeiro envia o ether, depois envia o NFT = segurança
-  	    //payable(owner()).transfer(msg.value); //eth to owner
   	    payable(address(this)).transfer(msg.value); //eth to contract
   	    _transfer(address(this), msg.sender, _id); //nft to user
   	    sold[_id] = true; //nft is sold
     }
 
-    // talvez eu tire o modificador onlyOwner, pois assim
-    // quem for dono do token pode modificar o valor dele
+    // função para mudar o valor do nft
     function changeTheValueNFT(uint _id, uint256 value) public onlyOwner {
         require(value > 0, "O valor do NFT deve ser maior que 0!");
         _value[_id] = value;
@@ -84,8 +82,7 @@ contract NFT_VendingMachine is ERC721, ERC721Enumerable, ERC721URIStorage, ERC72
 
     function _baseURI() internal pure override returns (string memory) {
         //return "ipfs://QmddxEdz2U44vdkRxdvYZmtAwjfBKrFabQPD4WhVkbgH78/";
-        // tenho que modificar esse link quando pegar os nft
-        return "https://ipfs.io/ipfs/QmXtWaD1YH6fNshGHC7R2FDvCfF63KzoxdAhq5edvqSHbo/";
+        return "https://ipfs.io/ipfs/QmX4j45qCqcDvxk6uhWNaig2BERgEhd3DqZcDUr3vUqmVf/";
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal override(ERC721, ERC721Enumerable) {
