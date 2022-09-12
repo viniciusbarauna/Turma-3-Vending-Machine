@@ -1,5 +1,5 @@
 <h1 align= "center">
-<img alt="Readme" Title="Readme" href="../imagens/logo-gama-academy.png"/>
+<img alt="Readme" Title="Readme" src="/Imagens/logo-gama-academy.png"/>
 </h1>
 
 # NFT Vending Machine
@@ -33,6 +33,12 @@ O presente projeto foi desenvolvido a partir do desafio proposto como conclusão
 - [x] Não deve ser possível reabastecer a máquina com ethers com valor zero
 
 # Tecnologias Utilizadas
+![GitHub top language](https://img.shields.io/github/languages/top/viniciusbarauna/Turma-3-Vending-Machine)
+![GitHub language count](https://img.shields.io/github/languages/count/viniciusbarauna/Turma-3-Vending-Machine)
+<i class="devicon-javascript-plain"></i>
+
+
+
 
 <h4>
 As Principais tecnologias utilizadas no projeto foram:
@@ -59,7 +65,7 @@ HTML e CSS, para a criação do layout da landing page do DAPP.
 # Layout da landing page
 
 <h1 align= "center">
-<img alt="Readme" Title="Readme" src=""/>
+<img alt="Readme" Title="Readme" src="/Imagens/Landing-page.gif"/>
 </h1>
 
 # Autores
