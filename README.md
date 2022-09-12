@@ -8,7 +8,7 @@
 <a href="#Pre-Requisitos">Pre-Requisitos</a> |
 <a href="#Tecnologias utilizadas">Tecnologias utilizadas</a> |
 <a href="#Funcionalidades">Funcionalidades</a> |
-<a href="#Layout da landing page">Layout da landing page</a> |
+<a href="#Preview da Landing Page">Preview da Landing Page</a> |
 <a href="#Autores">Autores</a>
 
 # O Projeto
@@ -41,13 +41,13 @@ O presente projeto foi desenvolvido a partir do desafio proposto como conclusão
 
 
 <h4>
-As Principais tecnologias utilizadas no projeto foram:
-Solidity, JavaScript, NodeJS, VSCode, Pinata, IPFS, Truffle e Openzeppelin, para o desenvolvimento do Smart contract.
-Remix, para o testes das funções do contrato.
-GitHub, para o melhor controle das funcionalidades entregues pelos autores e disposição do projeto para avaliação e apreciação.
-Trello, Para a criação do KANBAN, para que pudéssemos dividir as tarefas e conceituar o trabalho em suas várias etapas.
-Adobe Illustrator para desenvolver os assets para o projeto.
-HTML e CSS, para a criação do layout da landing page do DAPP.
+As Principais tecnologias utilizadas no projeto foram:</br>
+* Solidity, JavaScript, NodeJS, VSCode, Pinata, IPFS, Truffle e Openzeppelin, para o desenvolvimento do Smart contract.</br>
+* Remix, para o testes das funções do contrato.</br>
+* GitHub, para o melhor controle das funcionalidades entregues pelos autores e disposição do projeto para avaliação e apreciação.</br>
+* Trello, Para a criação do KANBAN, para que pudéssemos dividir as tarefas e conceituar o trabalho em suas várias etapas.</br>
+* Adobe Illustrator para desenvolver os assets para o projeto.</br>
+* HTML, CSS e React, para a criação do layout da landing page do DAPP.
 </h4>
 
 # Funcionalidades
@@ -62,7 +62,10 @@ HTML e CSS, para a criação do layout da landing page do DAPP.
 - Queimar um NFT criado. <br>
 </h4>
 
-# Layout da landing page
+# Preview da Landing Page
+<h4>
+Criamos uma Landing Page para posteriormente integrarmos com nosso Smart Contract.
+</h4>
 
 <h1 align= "center">
 <img alt="Readme" Title="Readme" src="/Imagens/Landing-page.gif"/>
